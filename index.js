@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
 require('./services/passport');
+require('./models/user');
+
 const authRoute = require('./routes/authRoutes');
 
 mongoose.connect(keys.mongoURI, "authSource=admin");
