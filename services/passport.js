@@ -32,8 +32,8 @@ passport.use(
 
 	passport.deserializedUser((id, done)=>{
 		User.findById(id).then(user=>{
-			done(null, user);
-		});
-	});		
+			done(null,)
+		})
+	})		
 ));
 
