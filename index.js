@@ -12,13 +12,19 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-//generate cookie session
-app.use(cookieSession({
-	maxAge:1*24*60*60*1000,
-	keys: [keys.cookieKey]
-}));
+//express middleware
+app.use(
+	//generate cookie session, 
+	// i.e., cookie session extracts cookie data, set it on the req.session,
+	//which is the user id from the databse
+	cookieSession({
+		maxAge:1*24*60*60*1000,
+		keys: [keys.cookieKey]
+	})
+);
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 require('./routes/authRoutes')(app);
 
