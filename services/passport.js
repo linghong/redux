@@ -27,10 +27,12 @@ passport.use(
 	}	
 ));
 
+//serialze user so that passport can generate cookies 
+//the user.id is the id moongo generated
 passport.serializeUser((user, done)=>{
 	done(null, user.id);
 });
-
+//get whatever from cookie to find the user
 passport.deserializeUser((id, done)=>{
 	User.findById(id).then(user=>{
 		done(null, user);
