@@ -6,4 +6,4 @@ npm install
 npm run dev
 ```
 ### To View
- Go To [<a href="]https://nodeserver-1.herokuapp.com/auth/google/"] (https://nodeserver-1.herokuapp.com/auth/google/)
+ Go To https://nodeserver-1.herokuapp.com/auth/google/
